@@ -63,23 +63,6 @@ def findtextchat(curl):
     if x == "Review recent login":
         print("\nFacebook wants to review your recent actions.\nPlease fix that and then re run the program.")
         exit(1)
-    if x == "Login approval needed":
-        print("\nYour account is stuck on verification\nPlease do it and then re run the program.")
-        exit(1)
-    if x == "Epsilon":
-        print("\nYour account got locked, recover it kindly and re run the script.")
-        exit(1)
-def sendtextconvo(comment):
-    try:
-        browser.select_form(nr = 1)
-    except mechanize._mechanize.FormNotFoundError:
-        print("Some error occured while finding text area, please check your account")
-        exit(1)
-    try:
-        browser.form['body'] = comment
-    except mechanize._form_controls.ControlNotFoundError:
-        print("Some error occured while filling text, please check your account")
-        exit(1)
     r = browser.submit()
     e = datetime.datetime.now()
     print("\033[1;32;40m", end = "")
