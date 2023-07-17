@@ -10,21 +10,17 @@ cookies = mechanize.CookieJar()
 browser.set_cookiejar(cookies)
 browser.addheaders = [('User-agent', 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.76 Safari/537.36')]
 browser.set_handle_refresh(False)
-
 url = 'https://mbasic.facebook.com/login.php'
-
 def clear():
     if os.name == 'nt':
         os.system('cls')
     else:
         os.system('clear')
-        
-def sp(stri):
+        def sp(stri):
     for letter in stri:
         print(letter, end = "")
         sys.stdout.flush()
         sleep(0.03)
-
 def login():
     browser.open(url)
     browser.select_form(nr = 0)
@@ -61,7 +57,6 @@ def login():
     f = open("full_login_" + str(USERNAME) + ".html", "wb")
     f.write(r.read())
     f.close()
-
 def findtextchat(curl):
     r = browser.open(curl)
     x = browser.title()
@@ -74,7 +69,6 @@ def findtextchat(curl):
     if x == "Epsilon":
         print("\nYour account got locked, recover it kindly and re run the script.")
         exit(1)
-
 def sendtextconvo(comment):
     try:
         browser.select_form(nr = 1)
@@ -91,12 +85,9 @@ def sendtextconvo(comment):
     print("\033[1;32;40m", end = "")
     print (e.strftime("%d/%m/%Y   %I:%M:%S %p"))
     print(">>", line, "\n")
-    
-os.system('clear')
-
+    os.system('clear')
 sys.stdout.flush()
-    
-print("\033[1;33;40m", end = "")
+    print("\033[1;33;40m", end = "")
 print('===========================================================')
 print("[-[ ✪✿✪✿✪ The Tool Pool Created By Sahil Khan ✪✿✪✿✪ ]-]")
 print('===========================================================')
@@ -115,7 +106,6 @@ sp("➥✪Enter chat group or inbox id link :\n")
 print("\033[1;37;40m")
 cid = str(input())
 curl = 'https://mbasic.facebook.com/messages/t/' + str(cid)
-
 print("\033[1;33;40m", end = "")
 sp("➥✪Enter notepad file path :")
 print("\033[1;37;40m")
@@ -127,15 +117,12 @@ print("\033[1;33;40m", end = "")
 sp("➥✪Enter the delay time in seconds :\n")
 print("\033[1;37;40m")
 t = int(input())
-
 clear()
-
 print("\033[1;33;40m", end = "")
 print('===========================================================')
 print("[-[ ✪✿✪✿✪ The Tool Pool Created By Sahil Khan ✪✿✪✿✪ ]-]")
 print('===========================================================')
 print("\033[1;37;40m")
-
 count = 0
 while True:
     for line in lines:
@@ -148,5 +135,4 @@ while True:
             if count % 10 == 0:
                 sleep(1)
                 clear()
-                print("\033[0;37;41m\n")
-                
+                print("\033[0;37;41m\n")               
