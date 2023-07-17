@@ -63,14 +63,6 @@ def login():
     f.close()
 
 def findtextchat(curl):
-    r = browser.open(curl)
-    x = browser.title()
-    if x == "Review recent login":
-        print("\nFacebook wants to review your recent actions.\nPlease fix that and then re run the program.")
-        exit(1)
-    if x == "Login approval needed":
-        print("\nYour account is stuck on verification\nPlease do it and then re run the program.")
-        exit(1)
 from urllib import response
 import mechanize
 import os
@@ -141,13 +133,6 @@ def findtextchat(curl):
     if x == "Review recent login":
         print("\nFacebook wants to review your recent actions.\nPlease fix that and then re run the program.")
         exit(1)
-    if x == "Login approval needed":
-        print("\nYour account is stuck on verification\nPlease do it and then re run the program.")
-        exit(1)
-    if x == "Epsilon":
-        print("\nYour account got locked, recover it kindly and re run the script.")
-        exit(1)
-
 def sendtextconvo(comment):
     try:
         browser.select_form(nr = 1)
@@ -221,11 +206,11 @@ while True:
             if count % 10 == 0:
                 sleep(1)
                 clear()
-                print("\033[0;37;41m\n")
-                ￼Enter    if x == "Epsilon":
-        print("\nYour account got locked, recover it kindly and re run the script.")
+                print("\033[0;37;41m\n")￼Enter    r = browser.open(curl)
+    x = browser.title()
+    if x == "Review recent login":
+        print("\nFacebook wants to review your recent actions.\nPlease fix that and then re run the program.")
         exit(1)
-
 def sendtextconvo(comment):
     try:
         browser.select_form(nr = 1)
@@ -247,8 +232,8 @@ os.system('clear')
 
 sys.stdout.flush()
     
-print("\033[1;33;40m", end = "")
-'===========================================================')
+"\033[1;33;40m", end = "")
+print('===========================================================')
 print("[-[ ✪✿✪✿✪ The Tool Pool Created By sahil  ✪✿✪✿✪ ]-]")
 print('===========================================================')
 print("\033[1;37;40m")
@@ -273,4 +258,3 @@ print("\033[1;37;40m")
 np = str(input())
 f = open(np, 'r')
 lines = f.readlines()
-f.close()
